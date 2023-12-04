@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 export default function Login() {
   return (
@@ -39,7 +40,8 @@ export default function Login() {
                     Login
                   </button>
                   <p className="mt-3">
-                    Belum punya akun? <a href="register.html">Daftar Disini</a>
+                    Belum punya akun? <Link to="/register">Daftar Disini</Link>{" "}
+                    {/* Menggunakan Link dari react-router-dom */}
                   </p>
                 </div>
               </form>

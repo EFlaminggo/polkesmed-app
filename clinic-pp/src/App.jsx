@@ -1,4 +1,4 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Featured from "./components/Featured";
@@ -7,26 +7,40 @@ import Statistic from "./components/Statistic";
 import Schedule from "./components/Schedule";
 import ListDoctor from "./components/ListDoctor";
 import Footer from "./components/Footer";
+import Doctor from "./pages/doctor"; // Assuming Doctor component exists in this file
+import Services from "./pages/services";
+import AboutUs from "./pages/aboutus";
+import Login from "./pages/login";
+import Register from "./pages/register";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="/Doctor" element={<Doctor />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
 
-  render() {
-    return (
-      <>
-        <Navbar />
-        <Hero />
-        <Featured />
-        <Introduction />
-        <Statistic />
-        <Schedule />
-        <ListDoctor />
-        <Footer />
-      </>
-    );
-  }
+function Layout() {
+  return (
+    <>
+      <Hero />
+      <Featured />
+      <Introduction />
+      <Statistic />
+      <Schedule />
+      <ListDoctor />
+    </>
+  );
 }
 
 export default App;
