@@ -7,11 +7,12 @@ import Statistic from "./components/Statistic";
 import Schedule from "./components/Schedule";
 import ListDoctor from "./components/ListDoctor";
 import Footer from "./components/Footer";
-import Doctor from "./pages/doctor"; // Assuming Doctor component exists in this file
+import Doctor from "./pages/doctor";
 import Services from "./pages/services";
 import AboutUs from "./pages/aboutus";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import Dashboard from "./pages/protected/dashboard";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </Router>
