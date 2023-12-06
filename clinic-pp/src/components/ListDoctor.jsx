@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ListDoctor() {
   return (
     <section className="section-dokter">
@@ -30,12 +32,13 @@ export default function ListDoctor() {
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
-            <a
-              href="dokter.html"
-              className="btn btn-lg btn-dokter-selengkapnya"
-            >
-              Selengkapnya
-            </a>
+            <Link to="/Doctor">
+              {" "}
+              {/* Update the path to your doctor details route */}
+              <button className="btn btn-lg btn-dokter-selengkapnya">
+                Selengkapnya
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="section-welcome">
@@ -7,12 +9,13 @@ export default function Hero() {
             <div className="welcome-content">
               <h2>POLKESMED HEALTH CARE</h2>
               <h5>Making Your Life Healthier and Happier</h5>
-              <a
-                href="janji-dengan-dokter.html"
-                className="btn btn-lg btn-buat-janji"
-              >
-                Janji Temu Dokter
-              </a>
+              <Link to="/appointment">
+                {" "}
+                {/* Update the path to your schedule route */}
+                <button className="btn btn-lg btn-buat-janji">
+                  Janji Temu Dokter
+                </button>
+              </Link>
             </div>
           </div>
           <div className="col-md-6 col-sm-12">

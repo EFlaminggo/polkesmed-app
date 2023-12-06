@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 export default function Doctor() {
   return (
@@ -48,12 +49,13 @@ export default function Doctor() {
             </div>
             <div className="col-lg-4 col-sm-6">
               <div className="d-grid">
-                <a
-                  href="janji-dengan-dokter.html"
+                {/* Correct usage of Link component */}
+                <Link
+                  to="/Appointment"
                   className="btn btn-buat-janji btn-lg mb-3 btn-block"
                 >
                   Janji Temu Dokter
-                </a>
+                </Link>
               </div>
             </div>
           </form>

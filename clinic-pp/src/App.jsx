@@ -12,23 +12,36 @@ import Services from "./pages/services";
 import AboutUs from "./pages/aboutus";
 import Login from "./pages/login";
 import Register from "./pages/register";
-import Dashboard from "./pages/protected/dashboard";
+import Appointment from "./pages/appointment";
+
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Layout />} />
         <Route path="/Doctor" element={<Doctor />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Appointment" element={<Appointment />} />
+
+        {/* Private Routes */}
+        <Route path="/Dashboard" element={<ProtectedRoute />} />
       </Routes>
       <Footer />
     </Router>
+  );
+}
+
+function ProtectedRoute() {
+  return (
+    // Add authentication logic here to determine if the user can access the Dashboard component
+    <Header />
   );
 }
 

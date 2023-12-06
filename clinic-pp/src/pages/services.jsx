@@ -11,7 +11,10 @@ export default function Services() {
           <div className="row">
             <div className="col-md-4 mb-4">
               <div className="card-layanan">
-                <img src="frontend/images/layanan.jpg" alt="Gambar Card" />
+                <img
+                  src="./src/frontend/images/layanan.jpg"
+                  alt="Pemeriksaan Kesehatan Dasar"
+                />
                 <div className="card-overlay">
                   <p className="card-text text-center">
                     Pemeriksaan Kesehatan Dasar
@@ -19,7 +22,13 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            {/* Masukkan card lainnya di sini sesuai kebutuhan */}
+            {/* Add more cards like the one above */}
+            <div className="col-md-4 mb-4">
+              <div className="card-layanan">
+                {/* Add your image and card content here */}
+              </div>
+            </div>
+            {/* Add more cards if needed */}
           </div>
         </div>
       </section>
