@@ -14,8 +14,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Appointment from "./pages/appointment";
 
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/dashboard/dashboard";
 
 function App() {
   return (
@@ -32,20 +31,10 @@ function App() {
         <Route path="/Appointment" element={<Appointment />} />
 
         {/* Private Routes */}
-        <Route path="/Dashboard" element={<ProtectedRoute />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </Router>
-  );
-}
-
-function ProtectedRoute() {
-  return (
-    // Wrap Header and Sidebar within a single parent element
-    <>
-      <Header />
-      <Sidebar />
-    </>
   );
 }
 
