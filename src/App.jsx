@@ -15,6 +15,7 @@ import Register from "./pages/register";
 import Appointment from "./pages/appointment";
 
 import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
@@ -40,8 +41,11 @@ function App() {
 
 function ProtectedRoute() {
   return (
-    // Add authentication logic here to determine if the user can access the Dashboard component
-    <Header />
+    // Wrap Header and Sidebar within a single parent element
+    <>
+      <Header />
+      <Sidebar />
+    </>
   );
 }
 
