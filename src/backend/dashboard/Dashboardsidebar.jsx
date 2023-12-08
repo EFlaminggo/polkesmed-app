@@ -26,7 +26,7 @@ export default function Dashboardsidebar() {
           </div>
         </li>
         <li className="nav-item">
-          <Link to="/dokter" className="nav-link">
+          <Link to="/ourdoctor" className="nav-link">
             <i className="bi bi-person"></i>
             <span>Dokter</span>
           </Link>

@@ -22,10 +22,11 @@ import "./dashboard/assets/vendor/tinymce/tinymce.min.js";
 import "./dashboard/assets/vendor/php-email-form/validate.js";
 import "./dashboard/assets/js/main.js";
 
-import Dashboard from "./dashboard/Dashboard";
 import Dashboardheader from "./dashboard/Dashboardheader";
 import Dashboardsidebar from "./dashboard/Dashboardsidebar";
+import Dashboard from "./dashboard/Dashboard";
 import Patient from "./pages/patient";
+import OurDoctor from "./pages/ourdoctor.jsx";
 
 function IndexBack() {
   return (
@@ -35,6 +36,7 @@ function IndexBack() {
         <Route path="/" element={<Layout />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/patient" element={<Patient />} />
+        <Route path="/ourdoctor" element={<OurDoctor />} />
       </Routes>
     </Router>
   );
