@@ -28,7 +28,7 @@ import Dashboard from "./dashboard/Dashboard";
 import Patient from "./pages/patient";
 import OurDoctor from "./pages/ourdoctor.jsx";
 
-function IndexBack() {
+function Index() {
   return (
     <Router>
       <Routes>
@@ -51,4 +51,4 @@ function Layout() {
     </>
   );
 }
-export default IndexBack;
+export default Index;
