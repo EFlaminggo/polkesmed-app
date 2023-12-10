@@ -1,9 +1,10 @@
-import IndexBack from "./backend";
+// import IndexBack from "./backend";
+import Index from "./frontend";
 
 function App() {
   return (
     <>
-      <IndexBack />
+    <Index />
     </>
   );
 }
