@@ -7,6 +7,7 @@ const app = express();
 
 const port = process.env.PORT;
 app.use(express.json()); // To parse any incoming request in JSON format
+app.use(express.urlencoded());
 app.use(cors()); // For CORS policy
 
 app.use(routes);

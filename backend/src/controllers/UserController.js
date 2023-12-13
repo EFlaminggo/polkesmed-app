@@ -1,8 +1,8 @@
-const Poliklinik = require("../models/Poliklinik");
+const User = require("../models/User");
 
 const getAll = async (req, res) => {
     try {
-        const [data] = await Poliklinik.getAll();
+        const [data] = await User.getAll();
         res.status(200).json({
             status: 200,
             message: "success",
@@ -19,7 +19,7 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
     try {
         const { id } = req.params;
-        const [result] = await Poliklinik.getById(id);
+        const [result] = await User.getById(id);
         if (result.length) {
             res.status(200).json({
                 status: 200,
@@ -43,7 +43,7 @@ const getById = async (req, res) => {
 const create = async (req, res) => {
     try {
         const { body } = req;
-        const [result] = await Poliklinik.createData(body);
+        const [result] = await User.createData(body);
         if (result.affectedRows > 0) {
             res.status(201).json({
                 status: 201,
@@ -68,7 +68,7 @@ const update = async (req, res) => {
     try {
         const { id } = req.params;
         const { body } = req;
-        const [result] = await Poliklinik.updateData(body, id);
+        const [result] = await User.updateData(body, id);
         if (result.affectedRows > 0) {
             res.status(200).json({
                 status: 200,
@@ -92,10 +92,8 @@ const update = async (req, res) => {
 const deleteData = async (req, res) => {
     try {
         const { id } = req.params;
-        const [result] = await Poliklinik.deleteData(id);
+        const [result] = await User.deleteData(id);
         if (result.affectedRows > 0) {
-            await Poliklinik.setNullDokterPoliklinik(id);
-            await Poliklinik.deleteJadwalPoliklinik(id);
             res.status(200).json({
                 status: 200,
                 message: "success",
