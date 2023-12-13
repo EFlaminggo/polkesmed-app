@@ -1,9 +1,13 @@
 const express = require("express");
-const app = express();
+const doctor = require("./doctor.router");
+const poliklinik = require("./poliklinik.router");
+const jadwal = require("./jadwalPoliklinik.router");
+const user = require("./user.router");
+const router = express.Router();
 
 const api = "/api/v1";
-app.use(api, require("./doctor")); // http://url/doctor
-app.use(api, require("./poliklinik")); // http://url/poliklinik
-app.use(api, require("./jadwal_poliklinik")); // http://url/jadwal-poliklinik
-app.use(api, require("./user"));
-module.exports = app;
+router.use(api, doctor); // http://url/doctor
+router.use(api, poliklinik); // http://url/poliklinik
+router.use(api, jadwal); // http://url/jadwal-poliklinik
+app.use(api, user);
+module.exports = router;
