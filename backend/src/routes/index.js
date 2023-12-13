@@ -1,12 +1,12 @@
 const express = require("express");
-const doctor = require("./doctor");
-const poliklinik = require("./poliklinik");
-const jadwal = require("./jadwal_poliklinik");
-const app = express();
+const doctor = require("./doctor.router");
+const poliklinik = require("./poliklinik.router");
+const jadwal = require("./jadwalPoliklinik.router");
+const router = express.Router();
 
 const api = "/api/v1";
-app.use(api, doctor); // http://url/doctor
-app.use(api, poliklinik); // http://url/poliklinik
-app.use(api, jadwal); // http://url/jadwal-poliklinik
+router.use(api, doctor); // http://url/doctor
+router.use(api, poliklinik); // http://url/poliklinik
+router.use(api, jadwal); // http://url/jadwal-poliklinik
 
-module.exports = app;
+module.exports = router;
