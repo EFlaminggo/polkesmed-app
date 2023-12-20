@@ -28,15 +28,8 @@ const deleteData = (id) => {
     return db_pool.execute(SQLQuery, [id]);
 };
 
-const setNullDokterPoliklinik = (id) => {
-    const SQLQuery = "UPDATE tb_dokter SET poliklinik_id=null WHERE poliklinik_id=?";
-    return db_pool.execute(SQLQuery, [id]);
-};
 
-const deleteJadwalPoliklinik = (id) => {
-    const SQLQuery = "DELETE FROM tb_jadwal_poliklinik WHERE poliklinik_id=?";
-    return db_pool.execute(SQLQuery, [id]);
-};
+
 
 module.exports = {
     getAll,
@@ -44,6 +37,4 @@ module.exports = {
     updateData,
     deleteData,
     getById,
-    setNullDokterPoliklinik,
-    deleteJadwalPoliklinik,
 };

@@ -9,5 +9,5 @@ const api = "/api/v1";
 router.use(api, doctor); // http://url/doctor
 router.use(api, poliklinik); // http://url/poliklinik
 router.use(api, jadwal); // http://url/jadwal-poliklinik
-app.use(api, user);
+router.use(api, user);
 module.exports = router;

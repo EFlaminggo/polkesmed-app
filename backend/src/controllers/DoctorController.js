@@ -43,6 +43,7 @@ const getById = async (req, res) => {
 const create = async (req, res) => {
     try {
         const { body } = req;
+
         const [result] = await Doctor.createNewDoctor(body);
         if (result.affectedRows > 0) {
             res.status(201).json({

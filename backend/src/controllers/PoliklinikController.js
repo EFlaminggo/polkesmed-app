@@ -94,8 +94,6 @@ const deleteData = async (req, res) => {
         const { id } = req.params;
         const [result] = await Poliklinik.deleteData(id);
         if (result.affectedRows > 0) {
-            await Poliklinik.setNullDokterPoliklinik(id);
-            await Poliklinik.deleteJadwalPoliklinik(id);
             res.status(200).json({
                 status: 200,
                 message: "success",
